@@ -98,24 +98,28 @@ st.markdown("""
     .metric-card {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         border-radius: 12px;
-        padding: 2rem;
+        padding: 2.5rem 2rem;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
         border-top: 4px solid #667eea;
         margin: 0.5rem 0;
+        min-width: 180px;
     }
     
     .metric-value {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
         font-weight: 800;
         color: #667eea;
-        margin-bottom: 0.5rem;
-        word-wrap: break-word;
-        line-height: 1.2;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .metric-label {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #64748b;
         font-weight: 500;
         text-transform: uppercase;
@@ -669,7 +673,7 @@ def main():
                     with col_a:
                         st.markdown(f"""
                         <div class="metric-card">
-                            <div class="metric-value" style="font-size: 1.5rem;">{sentiment['emotion']}</div>
+                            <div class="metric-value">{sentiment['emotion']}</div>
                             <div class="metric-label">Detected Emotion</div>
                         </div>
                         """, unsafe_allow_html=True)
