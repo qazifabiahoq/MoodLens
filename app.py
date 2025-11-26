@@ -268,6 +268,16 @@ st.markdown("""
         background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
     }
     
+    /* Fix success message text color */
+    .stSuccess {
+        background-color: #d1fae5;
+        color: #065f46;
+    }
+    
+    .stSuccess > div {
+        color: #065f46;
+    }
+    
     /* Tab styling for better visibility */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
