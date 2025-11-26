@@ -195,6 +195,11 @@ st.markdown("""
         margin: 1rem 0;
         border-left: 5px solid #10b981;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        color: #065f46;
+    }
+    
+    .gratitude-card h3 {
+        color: #065f46;
     }
     
     .keyword-badge {
@@ -214,6 +219,11 @@ st.markdown("""
         padding: 2rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
         margin: 1rem 0;
+        color: #1e293b;
+    }
+    
+    .stats-container h3, .stats-container h4 {
+        color: #1e293b;
     }
     
     #MainMenu {visibility: hidden;}
@@ -475,7 +485,10 @@ def create_emotion_distribution(entries_df):
         font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
         title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b"),
         plot_bgcolor='white',
-        paper_bgcolor='white'
+        paper_bgcolor='white',
+        legend=dict(
+            font=dict(color="#1e293b")
+        )
     )
     
     return fig
