@@ -6,6 +6,7 @@ from collections import Counter
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
+import pytz
 
 # =============================================================================
 # BRANDING - MoodLens
@@ -725,10 +726,16 @@ def main():
                     sentiment = analyze_sentiment(entry_text)
                     keywords = extract_keywords(entry_text)
                     
-                    # Create entry
+                    # Create entry with Toronto timezone
+                    utc_now = datetime.utcnow()
+                    utc_tz = pytz.UTC
+                    toronto_tz = pytz.timezone('America/Toronto')
+                    utc_time = utc_tz.localize(utc_now)
+                    toronto_time = utc_time.astimezone(toronto_tz)
+                    
                     entry = {
-                        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                        'date': datetime.now().strftime('%Y-%m-%d'),
+                        'timestamp': toronto_time.strftime('%Y-%m-%d %H:%M:%S'),
+                        'date': toronto_time.strftime('%Y-%m-%d'),
                         'text': entry_text,
                         'sentiment': sentiment,
                         'keywords': keywords
