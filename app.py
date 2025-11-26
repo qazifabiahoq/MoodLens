@@ -712,7 +712,8 @@ def main():
                     
                     st.markdown('<div class="section-header">Instant Analysis</div>', unsafe_allow_html=True)
                     
-                    col_a, col_b, col_c = st.columns(3, gap="large")
+                    # Add extra spacing with empty columns
+                    col_space1, col_a, col_space2, col_b, col_space3, col_c, col_space4 = st.columns([0.5, 2, 0.5, 2, 0.5, 2, 0.5])
                     
                     with col_a:
                         st.markdown(f"""
