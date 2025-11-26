@@ -428,7 +428,7 @@ def create_sentiment_chart(entries_df):
         template='plotly_white',
         height=400,
         font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
-        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b", weight=700),
+        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b"),
         plot_bgcolor='white',
         paper_bgcolor='white'
     )
@@ -465,7 +465,7 @@ def create_emotion_distribution(entries_df):
         template='plotly_white',
         height=400,
         font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
-        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b", weight=700),
+        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b"),
         plot_bgcolor='white',
         paper_bgcolor='white'
     )
@@ -503,7 +503,7 @@ def create_keyword_chart(all_keywords):
         template='plotly_white',
         height=500,
         font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
-        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b", weight=700),
+        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b"),
         plot_bgcolor='white',
         paper_bgcolor='white'
     )
