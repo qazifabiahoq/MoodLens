@@ -704,7 +704,11 @@ def main():
                     st.session_state.entries.insert(0, entry)
                     
                     # Show success with analysis
-                    st.success("Entry saved successfully!")
+                    st.markdown("""
+                    <div style="background-color: #d1fae5; border-left: 5px solid #10b981; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p style="color: #065f46; font-weight: 600; margin: 0; font-size: 1.05rem;">✓ Entry saved successfully!</p>
+                    </div>
+                    """, unsafe_allow_html=True)
                     
                     st.markdown('<div class="section-header">Instant Analysis</div>', unsafe_allow_html=True)
                     
