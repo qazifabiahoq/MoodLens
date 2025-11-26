@@ -106,18 +106,21 @@ st.markdown("""
     }
     
     .metric-value {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 800;
         color: #667eea;
         margin-bottom: 0.5rem;
+        word-wrap: break-word;
+        line-height: 1.2;
     }
     
     .metric-label {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         color: #64748b;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        margin-top: 0.5rem;
     }
     
     .positive-badge {
@@ -231,12 +234,15 @@ st.markdown("""
     }
     
     .insight-box {
-        background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         border-radius: 12px;
         padding: 1.5rem;
         margin: 1rem 0;
-        border-left: 5px solid #ec4899;
+        border-left: 5px solid #667eea;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        color: #1e293b;
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
     
     h1, h2, h3, h4, h5, h6 {
@@ -813,26 +819,26 @@ def main():
             insights = []
             
             if avg_sentiment > 0.3:
-                insights.append("🌟 You're maintaining a very positive mindset! Keep nurturing these feelings.")
+                insights.append("You're maintaining a very positive mindset! Keep nurturing these feelings.")
             elif avg_sentiment > 0.1:
-                insights.append("😊 Your overall mood is positive. Great emotional balance!")
+                insights.append("Your overall mood is positive. Great emotional balance!")
             elif avg_sentiment < -0.1:
-                insights.append("💙 You've been experiencing challenging emotions. Remember, it's okay to seek support.")
+                insights.append("You've been experiencing challenging emotions. Remember, it's okay to seek support.")
             
             if positive_ratio > 70:
-                insights.append(f"🎉 {positive_ratio:.0f}% of your entries show positive emotions. You're doing amazing!")
+                insights.append(f"{positive_ratio:.0f}% of your entries show positive emotions. You're doing amazing!")
             
             recent_trend = df.tail(5)['compound'].mean()
             overall_trend = df['compound'].mean()
             if recent_trend > overall_trend + 0.1:
-                insights.append("📈 Your recent entries show improvement in mood. Keep up the positive momentum!")
+                insights.append("Your recent entries show improvement in mood. Keep up the positive momentum!")
             elif recent_trend < overall_trend - 0.1:
-                insights.append("📊 Recent entries show lower mood. Consider what might be affecting you and practice self-care.")
+                insights.append("Recent entries show lower mood. Consider what might be affecting you and practice self-care.")
             
             top_keywords = Counter(all_keywords).most_common(3)
             if top_keywords:
                 top_themes = ', '.join([kw[0] for kw in top_keywords])
-                insights.append(f"🔍 Your most recurring themes: {top_themes}. These topics are central to your current experience.")
+                insights.append(f"Your most recurring themes: {top_themes}. These topics are central to your current experience.")
             
             for insight in insights:
                 st.markdown(f"""
@@ -859,7 +865,7 @@ def main():
             else:
                 st.markdown(f"""
                 <div class="gratitude-card">
-                    <h3 style="margin-top: 0;">🌟 {len(positive_entries)} Positive Moments Captured</h3>
+                    <h3 style="margin-top: 0;">{len(positive_entries)} Positive Moments Captured</h3>
                     <p style="font-size: 1.05rem; color: #065f46;">
                         You've documented {len(positive_entries)} entries with positive emotions. 
                         These are your bright spots - moments worth celebrating!
@@ -874,7 +880,7 @@ def main():
                     st.markdown(f"""
                     <div class="gratitude-card">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span class="entry-timestamp">📅 {entry['timestamp']}</span>
+                            <span class="entry-timestamp">{entry['timestamp']}</span>
                             <span style="color: #10b981; font-weight: 600;">
                                 Sentiment: {entry['sentiment']['compound']:.2f}
                             </span>
