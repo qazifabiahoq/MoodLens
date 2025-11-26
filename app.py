@@ -514,7 +514,7 @@ def main():
         st.markdown("""
         Your personal AI-powered mental wellness companion:
         
-        **🎯 Core Features**
+        **Core Features**
         - Real-time emotion tracking
         - Sentiment trend analysis
         - Keyword pattern recognition
@@ -522,7 +522,7 @@ def main():
         - Gratitude highlighting
         - Complete data export
         
-        **🔒 Privacy First**
+        **Privacy First**
         - 100% local storage
         - No data collection
         - Completely private
@@ -556,17 +556,17 @@ def main():
         
         # Clear data button
         if st.session_state.entries:
-            if st.button("🗑️ Clear All Data", type="secondary"):
+            if st.button("Clear All Data", type="secondary"):
                 if st.checkbox("Confirm deletion"):
                     st.session_state.entries = []
                     st.rerun()
     
     # Main tabs
     tab1, tab2, tab3, tab4 = st.tabs([
-        "✍️ New Entry",
-        "📊 Analytics",
-        "💚 Gratitude Journal",
-        "📥 Export Data"
+        "New Entry",
+        "Analytics",
+        "Gratitude Journal",
+        "Export Data"
     ])
     
     # TAB 1: New Entry
@@ -576,7 +576,7 @@ def main():
         col1, col2 = st.columns([3, 1])
         
         with col2:
-            if st.button("💡 Get Writing Prompt"):
+            if st.button("Get Writing Prompt"):
                 st.session_state.show_prompt = True
         
         if st.session_state.show_prompt:
@@ -598,7 +598,7 @@ def main():
         col1, col2, col3 = st.columns([2, 1, 1])
         
         with col1:
-            if st.button("💾 Save Entry", type="primary"):
+            if st.button("Save Entry", type="primary"):
                 if entry_text and len(entry_text.strip()) > 10:
                     # Analyze entry
                     sentiment = analyze_sentiment(entry_text)
@@ -617,7 +617,7 @@ def main():
                     st.session_state.entries.insert(0, entry)
                     
                     # Show success with analysis
-                    st.success("✅ Entry saved successfully!")
+                    st.success("Entry saved successfully!")
                     
                     st.markdown('<div class="section-header">Instant Analysis</div>', unsafe_allow_html=True)
                     
@@ -666,7 +666,7 @@ def main():
     # TAB 2: Analytics
     with tab2:
         if not st.session_state.entries:
-            st.info("📝 Start writing entries to see your analytics and emotional trends!")
+            st.info("Start writing entries to see your analytics and emotional trends!")
         else:
             st.markdown('<div class="section-header">Your Emotional Intelligence Dashboard</div>', unsafe_allow_html=True)
             
@@ -815,7 +815,7 @@ def main():
         st.markdown('<div class="section-header">Your Gratitude Collection</div>', unsafe_allow_html=True)
         
         if not st.session_state.entries:
-            st.info("📝 Start writing entries to see your gratitude moments!")
+            st.info("Start writing entries to see your gratitude moments!")
         else:
             # Filter positive entries
             positive_entries = [
@@ -859,11 +859,11 @@ def main():
         st.markdown('<div class="section-header">Export Your Wellness Data</div>', unsafe_allow_html=True)
         
         if not st.session_state.entries:
-            st.info("📝 No entries to export yet. Start writing to build your wellness history!")
+            st.info("No entries to export yet. Start writing to build your wellness history!")
         else:
             st.markdown("""
             <div class="stats-container">
-                <h3>📦 Complete Data Package</h3>
+                <h3>Complete Data Package</h3>
                 <p style="font-size: 1.05rem; color: #475569;">
                     Download your complete mental wellness journal including all entries, 
                     sentiment analyses, keywords, and timestamps. Your data is yours to keep forever.
@@ -917,7 +917,7 @@ def main():
             
             with col1:
                 st.download_button(
-                    label="📄 Download as JSON",
+                    label="Download as JSON",
                     data=json_data,
                     file_name=f"mindflow_journal_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
                     mime="application/json",
@@ -943,7 +943,7 @@ def main():
                 csv_string = csv_df.to_csv(index=False)
                 
                 st.download_button(
-                    label="📊 Download as CSV",
+                    label="Download as CSV",
                     data=csv_string,
                     file_name=f"mindflow_journal_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
                     mime="text/csv",
@@ -952,7 +952,7 @@ def main():
             
             st.markdown("""
             <div class="stats-container" style="margin-top: 2rem;">
-                <h4>🔒 Privacy Notice</h4>
+                <h4>Privacy Notice</h4>
                 <p style="color: #64748b;">
                     Your exported data is completely private. All processing happens locally in your browser.
                     We never see, store, or transmit your journal entries.
