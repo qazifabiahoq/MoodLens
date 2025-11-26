@@ -209,7 +209,7 @@ st.markdown("""
         border-radius: 20px;
         font-weight: 600;
         display: inline-block;
-        margin: 0.25rem;
+        margin: 0.25rem 0.25rem 0.25rem 0;
         font-size: 0.9rem;
     }
     
