@@ -308,6 +308,40 @@ st.markdown("""
         background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         color: white;
     }
+    
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+        .app-title {
+            font-size: 2rem;
+        }
+        
+        .app-subtitle {
+            font-size: 1rem;
+        }
+        
+        .metric-card {
+            padding: 1.5rem 1rem;
+            min-width: unset;
+        }
+        
+        .metric-value {
+            font-size: 1.25rem;
+            height: 40px;
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+        }
+        
+        .section-header {
+            font-size: 1.3rem;
+        }
+        
+        .keyword-badge {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+        }
+    }
 </style>
 """, unsafe_allow_html=True)
 
