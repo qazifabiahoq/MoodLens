@@ -98,33 +98,29 @@ st.markdown("""
     .metric-card {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         border-radius: 12px;
-        padding: 1.5rem 1rem;
+        padding: 2rem;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
         border-top: 4px solid #667eea;
         margin: 0.5rem 0;
-        min-width: 140px;
     }
     
     .metric-value {
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 800;
         color: #667eea;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
         word-wrap: break-word;
         line-height: 1.2;
-        overflow-wrap: break-word;
-        hyphens: auto;
     }
     
     .metric-label {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         color: #64748b;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         margin-top: 0.5rem;
-        line-height: 1.3;
     }
     
     .positive-badge {
@@ -673,7 +669,7 @@ def main():
                     with col_a:
                         st.markdown(f"""
                         <div class="metric-card">
-                            <div class="metric-value" style="font-size: 1.5rem; white-space: nowrap;">{sentiment['emotion']}</div>
+                            <div class="metric-value" style="font-size: 1.25rem; white-space: nowrap;">{sentiment['emotion']}</div>
                             <div class="metric-label">Detected Emotion</div>
                         </div>
                         """, unsafe_allow_html=True)
