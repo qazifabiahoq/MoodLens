@@ -427,8 +427,10 @@ def create_sentiment_chart(entries_df):
         hovermode='x unified',
         template='plotly_white',
         height=400,
-        font=dict(family="Inter, sans-serif", size=12),
-        title_font=dict(size=18, family="Inter, sans-serif", color="#1a202c")
+        font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
+        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b", weight=700),
+        plot_bgcolor='white',
+        paper_bgcolor='white'
     )
     
     return fig
@@ -462,8 +464,10 @@ def create_emotion_distribution(entries_df):
         title="Emotion Distribution",
         template='plotly_white',
         height=400,
-        font=dict(family="Inter, sans-serif", size=12),
-        title_font=dict(size=18, family="Inter, sans-serif", color="#1a202c")
+        font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
+        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b", weight=700),
+        plot_bgcolor='white',
+        paper_bgcolor='white'
     )
     
     return fig
@@ -498,8 +502,10 @@ def create_keyword_chart(all_keywords):
         yaxis_title="Keywords",
         template='plotly_white',
         height=500,
-        font=dict(family="Inter, sans-serif", size=12),
-        title_font=dict(size=18, family="Inter, sans-serif", color="#1a202c")
+        font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
+        title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b", weight=700),
+        plot_bgcolor='white',
+        paper_bgcolor='white'
     )
     
     return fig
@@ -667,7 +673,7 @@ def main():
                     with col_a:
                         st.markdown(f"""
                         <div class="metric-card">
-                            <div class="metric-value" style="font-size: 2rem;">{sentiment['emotion']}</div>
+                            <div class="metric-value" style="font-size: 1.5rem; white-space: nowrap;">{sentiment['emotion']}</div>
                             <div class="metric-label">Detected Emotion</div>
                         </div>
                         """, unsafe_allow_html=True)
