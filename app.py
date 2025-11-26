@@ -664,12 +664,12 @@ def main():
                     
                     st.markdown('<div class="section-header">Instant Analysis</div>', unsafe_allow_html=True)
                     
-                    col_a, col_b, col_c = st.columns([1, 1, 1])
+                    col_a, col_b, col_c = st.columns(3, gap="large")
                     
                     with col_a:
                         st.markdown(f"""
                         <div class="metric-card">
-                            <div class="metric-value" style="font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{sentiment['emotion']}</div>
+                            <div class="metric-value" style="font-size: 1.5rem;">{sentiment['emotion']}</div>
                             <div class="metric-label">Detected Emotion</div>
                         </div>
                         """, unsafe_allow_html=True)
