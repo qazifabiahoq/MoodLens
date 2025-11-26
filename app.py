@@ -336,13 +336,13 @@ def analyze_sentiment(text):
     
     # Determine emotion
     compound = scores['compound']
-    if compound >= 0.5:
+    if compound >= 0.7:
         emotion = 'Very Positive'
-    elif compound >= 0.05:
+    elif compound >= 0.2:
         emotion = 'Positive'
-    elif compound <= -0.5:
+    elif compound <= -0.7:
         emotion = 'Very Negative'
-    elif compound <= -0.05:
+    elif compound <= -0.2:
         emotion = 'Negative'
     else:
         emotion = 'Neutral'
