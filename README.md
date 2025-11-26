@@ -4,6 +4,8 @@
 
 A sophisticated web application that combines sentiment analysis AI, data visualization, and pattern recognition to help users understand their emotional wellness journey.
 
+**Live Demo**: https://moodlensapp.streamlit.app/
+
 ---
 
 ## Project Overview
