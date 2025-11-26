@@ -98,12 +98,12 @@ st.markdown("""
     .metric-card {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         border-radius: 12px;
-        padding: 2.5rem 2rem;
+        padding: 2rem 1.5rem;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
         border-top: 4px solid #667eea;
         margin: 0.5rem 0;
-        min-width: 180px;
+        min-width: 150px;
     }
     
     .metric-value {
@@ -712,13 +712,12 @@ def main():
                     
                     st.markdown('<div class="section-header">Instant Analysis</div>', unsafe_allow_html=True)
                     
-                    # Add extra spacing with empty columns
-                    col_space1, col_a, col_space2, col_b, col_space3, col_c, col_space4 = st.columns([0.2, 5, 0.2, 5, 0.2, 5, 0.2])
+                    col_a, col_b, col_c = st.columns(3, gap="medium")
                     
                     with col_a:
                         st.markdown(f"""
                         <div class="metric-card">
-                            <div class="metric-value" style="font-size: 1.5rem;">{sentiment['emotion']}</div>
+                            <div class="metric-value" style="font-size: 1.4rem;">{sentiment['emotion']}</div>
                             <div class="metric-label">Detected Emotion</div>
                         </div>
                         """, unsafe_allow_html=True)
