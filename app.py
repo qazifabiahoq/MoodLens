@@ -247,6 +247,37 @@ st.markdown("""
     .sidebar .sidebar-content {
         background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
     }
+    
+    /* Tab styling for better visibility */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 8px;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        height: 50px;
+        background-color: #f1f5f9;
+        border-radius: 8px;
+        color: #1e293b;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0 24px;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-weight: 700;
+    }
+    
+    .stTabs [data-baseweb="tab"]:hover {
+        background-color: #e2e8f0;
+        color: #0f172a;
+    }
+    
+    .stTabs [aria-selected="true"]:hover {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        color: white;
+    }
 </style>
 """, unsafe_allow_html=True)
 
