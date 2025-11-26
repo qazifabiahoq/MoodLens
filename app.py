@@ -111,8 +111,8 @@ st.markdown("""
         font-weight: 800;
         color: #667eea;
         margin-bottom: 0.75rem;
-        line-height: 1.3;
-        min-height: 50px;
+        line-height: 1.2;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -430,7 +430,15 @@ def create_sentiment_chart(entries_df):
         font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
         title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b"),
         plot_bgcolor='white',
-        paper_bgcolor='white'
+        paper_bgcolor='white',
+        xaxis=dict(
+            title_font=dict(color="#1e293b"),
+            tickfont=dict(color="#1e293b")
+        ),
+        yaxis=dict(
+            title_font=dict(color="#1e293b"),
+            tickfont=dict(color="#1e293b")
+        )
     )
     
     return fig
@@ -457,7 +465,7 @@ def create_emotion_distribution(entries_df):
         marker=dict(colors=[colors.get(e, '#667eea') for e in emotion_counts.index]),
         hole=0.4,
         textinfo='label+percent',
-        textfont=dict(size=14, family="Inter, sans-serif")
+        textfont=dict(size=14, family="Inter, sans-serif", color="white")
     )])
     
     fig.update_layout(
@@ -493,6 +501,7 @@ def create_keyword_chart(all_keywords):
             ),
             text=list(top_keywords.values()),
             textposition='auto',
+            textfont=dict(size=14, color='white', family="Inter, sans-serif")
         )
     ])
     
@@ -505,7 +514,15 @@ def create_keyword_chart(all_keywords):
         font=dict(family="Inter, sans-serif", size=12, color="#1e293b"),
         title_font=dict(size=18, family="Inter, sans-serif", color="#1e293b"),
         plot_bgcolor='white',
-        paper_bgcolor='white'
+        paper_bgcolor='white',
+        xaxis=dict(
+            title_font=dict(color="#1e293b"),
+            tickfont=dict(color="#1e293b")
+        ),
+        yaxis=dict(
+            title_font=dict(color="#1e293b"),
+            tickfont=dict(color="#1e293b")
+        )
     )
     
     return fig
